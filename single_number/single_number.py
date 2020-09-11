@@ -4,8 +4,18 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
-
-    pass
+    #create a cache
+    count_cache = {}
+    #loop over and insert the count of each number into the cache 
+    for num in arr:
+        if num in count_cache:
+            count_cache[num] += 1
+        else:
+            count_cache[num] = 1
+    #loop over and return the number that has a count of 1
+    for num in arr:
+        if count_cache[num] == 1:
+            return num
 
 
 if __name__ == '__main__':
